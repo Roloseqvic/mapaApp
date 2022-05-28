@@ -1,5 +1,7 @@
 //definir la variable global
 var map;
+var estado=falseM
+var marcador;
 
 //mostrar el mapa
 cargarMapa([9.880387,-83.923898]);
@@ -23,9 +25,12 @@ function cargarMapa(coord) {
 
 //funcion manejadora del evento locationfound
 function onLocationFound(e) {
-    console.log(e);
-    var radius = e.accuracy;
-    L.marker(e.latlng).addTo(map);
+    if(estado==false){
+        marcador=L.marker(e.latlng).addTo(map);
+    }else{
+        mapa.removeLayer(marcador);
+        marcador=L.marker(e.latlng).addTo(map);
+    }
 }
 
 
