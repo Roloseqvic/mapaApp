@@ -27,6 +27,7 @@ function cargarMapa(coord) {
 function onLocationFound(e) {
     if(estado==false){
         marcador=L.marker(e.latlng).addTo(map);
+        estado=true;
     }else{
         mapa.removeLayer(marcador);
         marcador=L.marker(e.latlng).addTo(map);
