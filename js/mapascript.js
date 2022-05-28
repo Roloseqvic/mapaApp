@@ -1,6 +1,6 @@
 //definir la variable global
 var map;
-var estado=falseM
+var estado=false;
 var marcador;
 
 //mostrar el mapa
