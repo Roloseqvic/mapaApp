@@ -6,10 +6,6 @@ var marcador;
 //mostrar el mapa
 cargarMapa([9.880387, -83.923898]);
 
-document.querySelector("#btn").onclick = function () {
-    map.removeLayer(marcador);
-}
-
 //funcion cargarmapa
 function cargarMapa(coord) {
     map = L.map('mapa').setView(coord, 18);
