@@ -1,11 +1,14 @@
 //definir la variable global
 var map;
-var estado=false;
+var estado = false;
 var marcador;
 
 //mostrar el mapa
-cargarMapa([9.880387,-83.923898]);
+cargarMapa([9.880387, -83.923898]);
 
+document.querySelector("#btn").onclick = function () {
+    map.removeLayer(marcador);
+}
 
 //funcion cargarmapa
 function cargarMapa(coord) {
@@ -25,11 +28,13 @@ function cargarMapa(coord) {
 
 //funcion manejadora del evento locationfound
 function onLocationFound(e) {
-    if(estado==false){
-        marcador=L.marker(e.latlng).addTo(map);
-        estado=true;
-    }else{
-        mapa.removeLayer(marcador);
+    if (estado == false) {
+        marcador = L.marker(e.latlng).addTo(map);
+        estado = true;
+        //alert("false");
+    } else {
+       // alert("true");
+        map.removeLayer(marcador);
         marcador=L.marker(e.latlng).addTo(map);
     }
 }
@@ -38,7 +43,10 @@ function onLocationFound(e) {
 function recorrido() {
     //invocamos el metodo locate para definir el view en la 
     //ubicación del gps
-    map.locate({setView: true, maxZoom: 16});
+    map.locate({
+        setView: true,
+        maxZoom: 16
+    });
 
-    setTimeout(recorrido,3000);
+    setTimeout(recorrido, 3000);
 }
