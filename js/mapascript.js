@@ -21,11 +21,11 @@ function cargarMapa(coord) {
         [9.88200, -83.926000],
         [9.879047, -83.922000]
     ]);
-    /*var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
+    var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
         opacity: 1,
         alt: altText,
         interactive: true
-    }).addTo(map);*/
+    }).addTo(map);
 
 
     //asignar el evento manejador de locationfound al mapa
