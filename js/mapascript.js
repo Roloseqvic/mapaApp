@@ -15,7 +15,7 @@ function cargarMapa(coord) {
     }).addTo(map);
 
     //cargar el mapa overlay
-    var imageUrl = '../img/Mapa-nombres.png';
+    var imageUrl = 'img/Mapa-nombres.png';
     var altText = 'Mapa Colegio Vocacional de Artes y Oficios de Cartago.';
     var latLngBounds = L.latLngBounds([
         [9.88200, -83.926000],
